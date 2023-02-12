@@ -9,7 +9,7 @@ def main():
     number = input()
     username = set()
     available_nums = {'1', '2', '3', '4', '5'}
-    while number not in available_nums:
+    while number in available_nums:
         print("1. Create a user")
         print("2. Login")
         print("3. Connect to the chat")
@@ -32,11 +32,14 @@ def main():
                             for user in username:
                                 print(user)
                                 print("You have selected " + available_nums + " press enter to exit.")
-                            leave_prog = input('')
-                        if __name__ == '__main__':
-                           list_reg_users()
+                            if __name__ == '__main__':
+                                list_reg_users()
+        leave_prog = input('')
+
+
 if __name__ == '__main__':
     main()
+
 
 
 
