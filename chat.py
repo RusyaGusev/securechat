@@ -6,7 +6,7 @@ def main():
     print("4. List all registered users")
     print("5. exit")
     number = input()
-    usernames = set
+    username = set
     available_nums = {'1', '2', '3', '4', '5'}
     while number not in available_nums:
         print("Please enter a number which corresponds to a function. ")
@@ -19,9 +19,9 @@ def main():
         number = input()
     while number != '5':
         if number == '1':
-            username_register(usernames)
+            username_register(username)
         elif number == '4':
-            list_all_user(usernames)
+            list_all_user(username)
             print("1. Create a user")
             print("2. Login")
             print("3. Connect to the chat")
@@ -32,20 +32,20 @@ def main():
     quit()
 
 
-def username_register(usernames):
+def username_register(username):
     print("Please input your name below: ")
     name = input(': ')
-    while name in usernames:
+    while name in username:
         print('Username already exists please enter another one')
         name = input(': ')
-    usernames.add(name)
+    username.add(name)
     print("Username " + name + " has been registered")
 
 
-def list_all_user(usernames):
-    for user in usernames:
+def list_all_user(username):
+    for user in username:
         print(user)
-    return list_all_user()
+    return list_all_user(username)
 
 if __name__ == '__main__':
     main()
