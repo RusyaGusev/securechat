@@ -35,6 +35,8 @@ def main():
 def username_register(username):
     print("Please input your name below: ")
     name = input(': ')
+    username.add(name)
+    print("Username " + name + " has been registered")
     while name in username:
         print('Username already exists please enter another one')
         name = input(': ')
