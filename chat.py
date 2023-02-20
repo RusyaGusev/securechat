@@ -42,7 +42,6 @@ def username_register(username):
     print("You have selected 'Register user' press enter to go back.")
     print("Please input your name below: ")
     name = input(': ')
-    #print("Username " + name + " has been registered")
     if name in username:
         print('Username already exists please enter another one')
         name = input(': ')
