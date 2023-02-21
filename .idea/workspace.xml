@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac9831b9-b05a-4966-a83b-a255a6cc17b2" name="Changes" comment="fixed some more code, still doesn't work correctly gives 3 issues">
+    <list default="true" id="ac9831b9-b05a-4966-a83b-a255a6cc17b2" name="Changes" comment="code works only after 2nd time">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat.py" afterDir="false" />
     </list>
@@ -163,12 +163,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676687395690</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="code works only after 2nd time">
+      <created>1676936409462</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676936409462</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed some more code, still doesn't work correctly gives 3 issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some more code, still doesn't work correctly gives 3 issues" />
+    <MESSAGE value="code works" />
+    <MESSAGE value="code works only after 2nd time" />
+    <option name="LAST_COMMIT_MESSAGE" value="code works only after 2nd time" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

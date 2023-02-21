@@ -34,6 +34,11 @@ def main():
             print("4. List all registered users")
             print("5. exit")
             number = input()
+        if number == '3' or number == '2':
+            print("Please pick one of the options except 2, 3")
+            print_menu()
+            number = input()
+
     print("Thank you for using our secret chat!")
     quit()
 
@@ -42,21 +47,31 @@ def username_register(username):
     print("You have selected 'Register user' press enter to go back.")
     print("Please input your name below: ")
     name = input(': ')
-    #print("Username " + name + " has been registered")
     if name in username:
-        print('Username already exists please enter another one')
-        name = input(': ')
-        username.add(name)
+            print('Username already exists please enter another one')
+            name = input(': ')
+            username.add(name)
+            username_set = len(username)
     elif name not in username:
-        username.add(name)
-        print("Username " + name + " has been registered")
-        return(username_register)
+            username.add(name)
+            print("Username " + name + " has been registered")
+            username_set = len(username)
+    if username_set == 0:
+        print("Please enter a name and do not leave blank.")
+    return(username_register)
 
 def list_all_user(username):
     print("You have selected 'list all users' press enter to go back.")
     for user in username:
         print(username)
     return(list_all_user)
+
+def print_menu():
+    print("1. Create a user")
+    print("2. Login")
+    print("3. Connect to the chat")
+    print("4. List all registered users")
+    print("5. exit")
 
 
 if __name__ == '__main__':
