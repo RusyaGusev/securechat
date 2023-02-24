@@ -1,38 +1,22 @@
 
 def main():
-    print("1. Create a user")
-    print("2. Login")
-    print("3. Connect to the chat")
-    print("4. List all registered users")
-    print("5. exit")
+    print_menu()
     number = input()
     username = set()
     available_nums = {'1', '2', '3', '4', '5'}
     while number not in available_nums:
         print("Please enter a number which corresponds to a function. ")
-        print("1. Create a user")
-        print("2. Login")
-        print("3. Connect to the chat")
-        print("4. List all registered users")
-        print("5. exit")
+        print_menu()
         print("Please print one of the numbers")
         number = input()
     while number != '5':
         if number == '1':
             username_register(username)
-            print("1. Create a user")
-            print("2. Login")
-            print("3. Connect to the chat")
-            print("4. List all registered users")
-            print("5. exit")
+            print_menu()
             number = input()
         elif number == '4':
             list_all_user(username)
-            print("1. Create a user")
-            print("2. Login")
-            print("3. Connect to the chat")
-            print("4. List all registered users")
-            print("5. exit")
+            print_menu()
             number = input()
         if number == '3' or number == '2':
             print("Please pick one of the options except 2, 3")
