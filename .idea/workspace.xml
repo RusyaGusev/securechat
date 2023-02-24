@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac9831b9-b05a-4966-a83b-a255a6cc17b2" name="Changes" comment="code works only after 2nd time">
+    <list default="true" id="ac9831b9-b05a-4966-a83b-a255a6cc17b2" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat.py" afterDir="false" />
     </list>
@@ -128,8 +128,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.chat" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.securechat (1)" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>

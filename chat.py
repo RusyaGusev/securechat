@@ -47,17 +47,18 @@ def username_register(username):
     print("You have selected 'Register user' press enter to go back.")
     print("Please input your name below: ")
     name = input(': ')
-    if name in username:
+    if name == "":
+        print("Please enter something and do no leave blank.")
+    else:
+        if name in username:
             print('Username already exists please enter another one')
             name = input(': ')
             username.add(name)
-            username_set = len(username)
-    elif name not in username:
+            print("Username " + name + " has been registered")
+        elif name not in username:
             username.add(name)
             print("Username " + name + " has been registered")
             username_set = len(username)
-    if username_set == 0:
-        print("Please enter a name and do not leave blank.")
     return(username_register)
 
 def list_all_user(username):
