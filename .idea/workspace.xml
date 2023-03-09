@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac9831b9-b05a-4966-a83b-a255a6cc17b2" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
+    <list default="true" id="ac9831b9-b05a-4966-a83b-a255a6cc17b2" name="Changes" comment="everything works now">
+      <change afterPath="$PROJECT_DIR$/fibbonacci number.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat.py" afterDir="false" />
     </list>
@@ -41,6 +42,27 @@
   }
 }</component>
   <component name="RunManager" selected="Python.chat">
+    <configuration name="8ball" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SecureChat" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/8ball.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="chat" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SecureChat" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,6 +150,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.chat" />
+        <item itemvalue="Python.8ball" />
         <item itemvalue="Python.securechat (1)" />
         <item itemvalue="Python.test" />
       </list>
@@ -170,14 +193,33 @@
       <option name="project" value="LOCAL" />
       <updated>1676936409462</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="everything works now">
+      <created>1677225436517</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677225436517</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed some more code, still doesn't work correctly gives 3 issues" />
     <MESSAGE value="code works" />
     <MESSAGE value="code works only after 2nd time" />
-    <option name="LAST_COMMIT_MESSAGE" value="code works only after 2nd time" />
+    <MESSAGE value="everything works now" />
+    <option name="LAST_COMMIT_MESSAGE" value="everything works now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
