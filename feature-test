@@ -1,13 +1,13 @@
-
 username = set()
 print("Please input username")
 username = input(': ')
-
-moderator = set()
+user_role2 = {}
 user = set()
 user.add(username)
-admin = set()
-user_role2 = set()
+
+user_val = 1
+admin_val = 2
+moderator_val = 3
 roles_available = {'admin', 'user', 'moderator', '1', '2', '3'}
 def roles(username):
     print("Print the username:")
@@ -22,14 +22,14 @@ def roles(username):
         role_picked_low = len(role_picked)
     if role_picked_low not in roles_available:
         if role_picked == 'admin'or role_picked == '2' :
-            admin.add(role_name)
-            user_role2.append(admin = 2)
+            user_role2['name'] = role_name
+            user_role2['role'] = "admin" and admin_val
             print("You are now registered as a admin.")
         if role_picked == 'user' or role_picked == '1':
             print("You are already registered as a user.")
         if role_picked == 'moderator' or role_picked == '3':
-            moderator.add(role_name)
-            user_role2.append(moderator = 3)
+            user_role2["name"] = role_name
+            user_role2["role"] = "moderator" and moderator_val
             print("You are registered as a moderator")
         elif username in moderator:
             print("User already registered as moderator")
