@@ -2,7 +2,7 @@
 def main():
     print_menu()
     number = input()
-    username = {}
+    username = set()
     available_nums = {'1', '2', '3', '4', '5', '6'}
     while number not in available_nums:
         print("Please enter a number which corresponds to a function. ")
@@ -84,13 +84,6 @@ def list_all_user(username):
     for user in username:
         print(username)
     return(list_all_user)
-
-
-
-
-
-
-
 def print_menu():
     print("1. Create a user")
     print("2. Login")
