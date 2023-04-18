@@ -1,4 +1,4 @@
-ef main():
+def main():
     print_menu()
     number = input()
     users = {}
