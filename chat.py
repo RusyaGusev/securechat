@@ -2,7 +2,6 @@ def main():
     print_menu()
     number = input()
     users = {}
-    userinfo = {}
     available_nums = {'1', '2', '3', '4', '5', '6'}
     while number not in available_nums:
         print("Please enter a number which corresponds to a function. ")
@@ -11,7 +10,7 @@ def main():
         number = input()
     while number != '6':
         if number == '1':
-            username_register(users, userinfo)
+            username_register(users)
             print_menu()
             number = input()
         if number == '5':
@@ -23,14 +22,15 @@ def main():
             print_menu()
             number = input()
         if number == '4':
-            roles(users, userinfo)
+            roles(users)
             print_menu()
             number = input()
     print("Thank you for using our secret chat!")
     quit()
 
 
-def username_register(users, userinfo):
+def username_register(users):
+    userinfo = {}
     print("Please input your name below: ")
     username = input(': ')
     if username != "":
@@ -48,9 +48,10 @@ def username_register(users, userinfo):
     return()
 
 
-def roles(users, userinfo):
+def roles(users):
+    new_role = {}
     print("Type E if you want to exit assigning roles, else press enter to assign role.")
-    choice = input(': ')
+    choice = input()
     while choice != 'E':
         roles_available = {'1', '2', '3'}
         print("Please print your username")
@@ -65,34 +66,35 @@ def roles(users, userinfo):
                 print("Please write the number associated with the role.")
             else:
                 if role_picked == '2':
-                    if "moderator" in userinfo[role_name]:
+                    if "moderator" in users[role_name]:
                         print("You are a moderator hence you cannot lower your role.")
                     else:
-                        if "admin" in userinfo[role_name]:
+                        if "admin" in users[role_name]:
                             print("You are already registered as a admin, you cannot lower your role.")
-                        elif "admin" not in userinfo[role_name]:
-                            userinfo["Role: "] = "admin"
+                        elif "admin" not in users[role_name]:
+                            new_role["Role: "] = "admin"
                             print("You are now registered as a admin.")
                 if role_picked == '1':
-                    if "admin" or "moderator" in userinfo[role_name]:
+                    if "admin" or "moderator" in users[role_name]:
                         print("You are registered as a role above user, hence you cannot lower your role.")
                     else:
                         print("You are already registered as a user.")
+                        new_role["Role: "] = "user"
                 if role_picked == '3':
-                    if "moderator" in userinfo[role_name]:
+                    if "moderator" in users[role_name]:
                         print("You have already been registered as a moderator, you cannot lower your role.")
-                    elif "moderator" not in userinfo[role_name]:
-                        userinfo["Role: "] = 'moderator'
+                    elif "moderator" not in users[role_name]:
+                        new_role["Role: "] = 'moderator'
                         print("You are registered as a moderator")
                 choice = 'E'
-                users[role_name] = userinfo
-        print("Please enter a username which exists already or the username you used when you registered.")
+                users[role_name] = new_role
+        print("Please enter a username with which you registered.")
     return()
 
 
 def list_all_user(users):
     for user in users:
-        print(f"User: {user}, Role: {users[user]}")
+        print(f"User: {user}, {users[user]}")
     return()
 
 
