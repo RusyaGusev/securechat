@@ -41,6 +41,7 @@ def username_register(users):
         elif username not in users:
             print("Username " + username + " has been registered")
         userinfo["username"] = username
+        userinfo["Role: "] = 'user'
         users[username] = userinfo
     elif username == "":
         print("Please enter something and do no leave blank.")
@@ -68,10 +69,11 @@ def roles(users):
                     if 'admin' not in users[role_name]:
                         new_role["Role: "] = 'admin'
                         print("You are now registered as a admin.")
-                    if 'admin' in users[role_name]:
-                        print("You are already registered as a admin.")
-                    if 'moderator' in users[role_name]:
-                        print("You are registered as a moderator and hence you cannot lower your role.")
+                    else:
+                        if 'admin' == users[role_name]:
+                            print("You are already registered as a admin.")
+                        if 'moderator' in users[role_name]:
+                            print("You are registered as a moderator and hence you cannot lower your role.")
                 if role_picked == '1':
                     if 'moderator' or 'admin' in users[role_name]:
                         print("You are registered as a moderator or admin hence you cannot lower your role.")
@@ -79,11 +81,11 @@ def roles(users):
                         new_role["Role: "] = 'user'
                         print("You are already registered as a User.")
                 if role_picked == '3':
-                    if 'moderator' not in users[role_name]:
-                        new_role["Role: "] = 'moderator'
-                        print("You are already registered as a moderator.")
                     if 'moderator' in users[role_name]:
-                        print("You are already registered as a moderator")
+                        print("You are already registered as a moderator.")
+                    elif 'moderator' not in users[role_name]:
+                        new_role["Role: "] = 'moderator'
+                        print("You are registered as a moderator.")
                 choice = 'E'
                 users[role_name] = new_role
         print("Please enter a username with which you registered.")
