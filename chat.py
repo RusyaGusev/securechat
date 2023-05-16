@@ -40,8 +40,7 @@ def username_register(users):
             print("Username " + name + " has been registered")
         elif username not in users:
             print("Username " + username + " has been registered")
-        userinfo["username"] = username
-        userinfo["Role: "] = 'user'
+        userinfo['role'] = 'user'
         users[username] = userinfo
     elif username == "":
         print("Please enter something and do no leave blank.")
@@ -66,29 +65,33 @@ def roles(users):
                 print("Please write the number associated with the role.")
             else:
                 if role_picked == '2':
-                    if 'admin' not in users[role_name]:
-                        new_role["Role: "] = 'admin'
-                        print("You are now registered as a admin.")
+                    if 'moderator' in (users[role_name]['role']):
+                        print("You are registered as a moderator and hence you cannot lower your role.")
                     else:
-                        if 'admin' == users[role_name]:
-                            print("You are already registered as a admin.")
-                        if 'moderator' in users[role_name]:
-                            print("You are registered as a moderator and hence you cannot lower your role.")
+                        if 'admin' not in users[role_name]:
+                            new_role['role'] = 'admin'
+                            print("You are now registered as a admin.")
+                            users[role_name] = new_role
+                        elif 'admin' in users[role_name]:
+                            print("You're already registered as a admin")
                 if role_picked == '1':
-                    if 'moderator' or 'admin' in users[role_name]:
+                    if 'moderator' in users[role_name] or 'admin' in users[role_name]:
                         print("You are registered as a moderator or admin hence you cannot lower your role.")
                     else:
-                        new_role["Role: "] = 'user'
+                        new_role['role'] = 'user'
                         print("You are already registered as a User.")
+                        users[role_name] = new_role
                 if role_picked == '3':
                     if 'moderator' in users[role_name]:
                         print("You are already registered as a moderator.")
                     elif 'moderator' not in users[role_name]:
-                        new_role["Role: "] = 'moderator'
+                        new_role['role'] = 'moderator'
                         print("You are registered as a moderator.")
+                        users[role_name] = new_role
                 choice = 'E'
-                users[role_name] = new_role
-        print("Please enter a username with which you registered.")
+                print(users[role_name])
+        else:
+            print("Please enter a username with which you registered.")
     return()
 
 
