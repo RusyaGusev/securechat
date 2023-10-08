@@ -40,3 +40,5 @@ def connect_to_chat(users):
                 print(users[user][message])
 
     print("Please enter a valid IPv6")
+
+    ###
