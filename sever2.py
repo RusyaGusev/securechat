@@ -12,8 +12,7 @@ def main():
             print("recieved message from client " + message)
             await websocket.send("Pong " + message)
 
-    start_server = websockets.server(echo, "localhost", PORT)
-
+    start_server = websockets.serve(echo, "localhost", PORT)
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
 

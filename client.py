@@ -3,7 +3,7 @@ import websockets
 import asyncio
 def main():
     async def listen():
-        url = "ws://101.98.20.149:7890"
+        url = "ws://146.235.198.127:7980"
 
         async with websockets.connect(url) as ws:
             await ws.send("Hello Server!")
