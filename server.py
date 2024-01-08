@@ -13,13 +13,13 @@ def main():
 
         try:
             async for message in websocket:
-                print("Received message from client: " + {message})
+                print("Received message from client: " + message)
                 for conn in connected:
                     if conn != websocket:
-                        await conn.send("Someone said: {message}" + {message})
+                        await conn.send("Someone said:" + message + message)
 
         except websockets.exceptions.ConnectionClosed as e:
-            print("A client just disconnected: "  + {e})
+            print("A client just disconnected: "  + e)
         finally:
             connected.remove(websocket)
             print("Remaining connected clients:", len(connected))
@@ -34,3 +34,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+#146.235.198.127

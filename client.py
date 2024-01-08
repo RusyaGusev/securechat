@@ -1,17 +1,28 @@
 
-import websockets
 import asyncio
-def main():
-    async def listen():
-        url = "ws://146.235.198.127:7980"
+import websockets
 
-        async with websockets.connect(url) as ws:
-            await ws.send("Hello Server!")
+async def send_messages():
+    url = "ws://146.235.198.127:7890"
+
+    try:
+        async with websockets.connect(url, timeout=10) as ws:
             while True:
-                msg = await ws.recv()
-                print(msg)
+                print("You have been connected")
+                message = input("Enter a message to send (or 'exit' to quit): ")
+                if message.lower() == 'exit':
+                    break.
+                await ws.send(message)
 
-    asyncio.get_event_loop().run_until_complete(listen())
+    except websockets.exceptions.ConnectionClosed as e:
+        print(f"Connection to the server closed: {e}")
 
-if __name__ == '__main__':
+def main():
+    asyncio.get_event_loop().run_until_complete(send_messages())
+
+if __name__ == "__main__":
     main()
+
+
+#146.235.198.127
+# 101.98.20.149
