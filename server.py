@@ -1,7 +1,7 @@
 import websockets
 import asyncio
 
-def main():
+async def main():
     PORT = 7890
     print("Server listening on Port " + str(PORT))
 
@@ -23,17 +23,17 @@ def main():
         finally:
             connected.remove(websocket)
             print("Remaining connected clients:", len(connected))
+            if not connected:
+                print("No active connections. Stopping the server...")
+                asyncio.get_event_loop().stop()
 
     start_server = websockets.serve(echo, "", PORT)
 
     try:
-        asyncio.get_event_loop().run_until_complete(start_server)
+        await start_server
         asyncio.get_event_loop().run_forever()
     except KeyboardInterrupt:
-        print("stopping")
+        print("Stopping")
 
 if __name__ == '__main__':
-    main()
-
-
-#146.235.198.127
+    asyncio.run(main())
