@@ -1,47 +1,38 @@
 import websockets
 import asyncio
 
-def main():
+async def main():
     PORT = 7890
     print("Server listening on Port " + str(PORT))
 
     connected = set()
 
     async def echo(websocket, path):
-        print("A client connected")
+        print("A client just connected")
         connected.add(websocket)
 
         try:
-            while True:
-                message = await websocket.recv()
-                if message is None:
-                    break
-                print("Received message from client:", message)
-
+            async for message in websocket:
+                print("Received message from client: " + message)
                 for conn in connected:
                     if conn != websocket:
-                        await conn.send("Someone said: " + message)
+                        await conn.send("Someone said:" + message)
 
         except websockets.exceptions.ConnectionClosed as e:
-            print("A client disconnected:", str(e))
+            print("A client just disconnected: "  + str(e))
         finally:
             connected.remove(websocket)
-            print("Clients remaining", len(connected))
-
-            if len(connected) == 0:
-                print("No clients active, server is stopping")
-                asyncio.get_event_loop().stop()
+            print("Remaining connected clients:", len(connected))
 
     start_server = websockets.serve(echo, "", PORT)
 
     try:
-        asyncio.get_event_loop().run_until_complete(start_server)
-        asyncio.get_event_loop().run_forever()
+        await start_server
+        await asyncio.Future()  # Run forever
     except KeyboardInterrupt:
         print("stopping")
 
 if __name__ == '__main__':
-    main()
-
+    asyncio.get_event_loop().run_until_complete(main())
 
 #146.235.198.127
